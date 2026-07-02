@@ -1,12 +1,11 @@
 import React from 'react'
+import Card from './components/Card'
 
 const App = () => {
   return (
-    <div>
-      <h1 className=" flex justify-between p-4 bg-pink-500 text-white">
-        <span>Logo</span>
-        <button className='bg-black'>Login</button>
-      </h1>  
+    <div className='m-4 p-4'>
+      <h1>This is the practice React project.</h1>
+      <Card/>
   </div>
   )
 }
