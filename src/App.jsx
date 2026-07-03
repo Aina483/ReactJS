@@ -3,6 +3,7 @@ import Card from './components/Card'
 import Parent from './components/Parent'
 import ProfileCard from './components/ProfileCard'
 import Resume from './components/Resume'
+import Form from './components/Form'
 
 const App = () => {
   // The props passed can be anything - be it array , object, string, number, boolean or a function for that matter.
@@ -12,12 +13,14 @@ const App = () => {
 
   // useState - hook to manage the state of the app
   const [count, setCount] = useState(0);
-  
-  
+  const [num, setNum] = useState([10,20,30])
+
 
   function handleDownload(){
     console.log("download button clicked")
   }
+
+  
 
   
   return (
@@ -38,6 +41,20 @@ const App = () => {
         <h1 className='text-xm italic'> Count : {count}</h1>
         <button className='bg-blue-400' onClick={()=>setCount( count => count+1)}>Counter</button>
       </div>
+
+      <div className='mt-6'>
+        <h1 className='text-xs italic underline'>Numbers are:</h1>
+        <ul>
+         {num.map((val , idx) => {
+          return <li key= {idx}> {val}</li>
+         })}        
+         </ul>
+         <button className='bg-blue-500' onClick={()=>setNum(num.map((val,idx) => {
+          return val*10
+         }))}>Change Numbers</button>
+      </div>
+
+      <Form/>
 
 
   </div>
