@@ -9,6 +9,10 @@ const App = () => {
   console.log("parent rendered")
   const skills = ["React", "JS", "Node.js"]
   const user = {name:"Aina" , role:"SDE" , experience : 1.2}
+
+  function handleDownload(){
+    console.log("download button clicked")
+  }
   
   return (
     <div className='m-4 p-4'>
@@ -20,6 +24,7 @@ const App = () => {
       <Resume
       skills = {skills}
       user = {user}
+      onDownload = {handleDownload}
       />
 
 
