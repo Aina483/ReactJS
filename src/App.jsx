@@ -5,6 +5,7 @@ import ProfileCard from './components/ProfileCard'
 import Resume from './components/Resume'
 import Form from './components/Form'
 import Notes from './components/Notes'
+import Gallery from './components/Gallery'
 
 const App = () => {
   // The props passed can be anything - be it array , object, string, number, boolean or a function for that matter.
@@ -63,6 +64,9 @@ const App = () => {
       <Form/>
 
       <Notes/>
+
+
+      <Gallery/>
 
 
   </div>
