@@ -4,16 +4,17 @@ import axios from 'axios'
 const Gallery = () => {
 
     const [userData, setUserData] = useState([])
+    const [index, setIndex] = useState(1)
 
   const getData = async ()=>{
         console.log("data received")
-        const response = await axios.get('https://picsum.photos/v2/list?page=3&limit=30')
+        const response = await axios.get(`https://picsum.photos/v2/list?page=${index}&limit=30`)
         setUserData(response.data)
     }
 
     useEffect(()=>{
         getData()
-    }, [])
+    }, [index])
 
     let printUserData = 'No data available'
 
@@ -32,6 +33,22 @@ const Gallery = () => {
     <div className='bg-black p-4 m-4 h-screen text-white'>
         <div className='flex flex-wrap gap-4'>
             {printUserData}
+        </div>
+
+        <div className='flex flex-wrap'>
+            <button className='bg-blue-500 p-4 m-4 rounded' 
+            onClick={()=>{
+                if(index>1)
+                setIndex(index=>index-1)
+            }}
+            >Prev</button>
+            <h4 className='text-black p-4 m-4'>Page {index}</h4>
+            <button className='bg-blue-500 p-4  m-4 rounded'
+            onClick={()=>{
+                setIndex(index => index+1)
+            }}
+            >
+                Next</button>
         </div>
     </div>
   )
