@@ -11,6 +11,11 @@ const App = () => {
   console.log("parent rendered")
   const skills = ["React", "JS", "Node.js"]
   const user = {name:"Aina" , role:"SDE" , experience : 1.2}
+ 
+
+  // Stores the string in the browser's memory . if object is to be stored we use JSON.stringify
+  localStorage.setItem('user' , JSON.stringify(user))
+  
 
   // useState - hook to manage the state of the app
   const [count, setCount] = useState(0);
