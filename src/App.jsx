@@ -6,6 +6,8 @@ import Resume from './components/Resume'
 import Form from './components/Form'
 import Notes from './components/Notes'
 import Gallery from './components/Gallery'
+import { Routes , Route } from 'react-router-dom'
+import About from './pages/About'
 
 const App = () => {
   // The props passed can be anything - be it array , object, string, number, boolean or a function for that matter.
@@ -67,6 +69,10 @@ const App = () => {
 
 
       <Gallery/>
+
+      <Routes>
+        <Route path="/about" element={<About/>}></Route>
+      </Routes>
 
 
   </div>
